@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P-Ticket</title>
+    <!-- cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+        .font-raleway {
+            font-family: "Raleway", sans-serif;
+        }
+
+        .font-inter {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+    <!-- custom tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        green: '#1DD100'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="">
+    <header class="container mx-auto">
+        <!-- nav bar -->
+        <section class="font-raleway pb-8 pt-8">
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-medium">
+                            <li><a>Home</a></li>
+                            <li><a>About</a></li>
+                            <li><a>Destination</a></li>
+                            <li><a>Search</a></li>
+                        </ul>
+                    </div>
+                    <a class="btn btn-ghost text-4xl font-extrabold">P-Ticket</a>
+                </div>
+                <div class="navbar-center hidden lg:flex font-medium">
+                    <ul class="menu menu-horizontal px-1">
+                        <li><a>Home</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Destination</a></li>
+                        <li><a>Search</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a class="btn font-bold bg-[#1DD10020] text-green rounded-xl px-7">Bus <img
+                            src="images/bus-icon.png" alt=""></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- banner  work left-->
+        <section class="rounded-3xl pb-28">
+            <div class="hero rounded-3xl h-[550px] bg-no-repeat bg-cover"
+                style="background-image: url(images/banner.png);">
+                <div class=" bg-opacity-60"></div>
+                <div class="hero-content text-center w-full text-white">
+                    <div class="w-full ">
+                        <h1 class="mb-8 text-6xl font-extrabold font-raleway leading-normal">End-to-End Travel with <br>
+                            <span class="text-green">P Paribahan</span>
+                        </h1>
+                        <p class="mb-8 font-inter text-lg">Yes, you can run unit tests and view the results directly
+                            within the app. The <br>
+                            integrated testing features allow for a streamlined .</p>
+                        <button class="btn bg-green font-raleway font-bold text-xl px- ">Buy Tickets</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <main class="container mx-auto">
+        <!-- offer work left-->
+        <section>
+            <div class="pb-12">
+                <h1 class="font-raleway text-center font-bold text-4xl">Best offers for you</h1>
+            </div>
+            <div class="flex flex-col md:flex-row text-center gap-6">
+                <div class="card card-side bg-base-100 shadow-xl flex-1 gap-1">
+                    <div class="card-body font-inter border rounded-3xl bg-[#FFBF0F]">
+                        <h1 class="font-extrabold text-4xl">15% OFF</h1>
+                        <h2 class="font-semibold text-xl">on your next purchase</h2>
+                        <p class="font-medium text-lg">use by january 2024</p>
+                    </div>
+                    <div class="card-body font-raleway border rounded-3xl bg-[#FFBF0F]">
+                        <h2 class="font-bold text-3xl">New 15</h2>
+                        <p class="font-medium text-lg">Coupon Code</p>
+
+                    </div>
+                </div>
+                <div class="card card-side bg-base-100 shadow-xl flex-1 gap-1">
+                    <div class="card-body font-inter bg-[#F78C9C] rounded-3xl">
+                        <h1 class="font-extrabold text-4xl">15% OFF</h1>
+                        <h2 class="font-semibold text-xl">on your next purchase</h2>
+                        <p class="font-medium text-lg">use by january 2024</p>
+                    </div>
+                    <div class="card-body font-raleway bg-[#F78C9C] rounded-3xl">
+                        <h2 class="font-bold text-3xl">New 15</h2>
+                        <p class="font-medium text-lg">Coupon Code</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center mt-16  ">
+                <button class="btn text-green font-bold text-xl font-raleway px-7 py-5">See All Offers</button>
+            </div>
+
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
