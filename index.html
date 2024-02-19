@@ -159,7 +159,8 @@
                         </div>
                         <div>
                             <button class="btn btn-lg bg-[#1DD10020] text-green"><img src="images/seat-green.png"
-                                    alt="">40 Seats left</button>
+                                    alt=""><span id="available" class="text-green font-semibold text-lg">40</span> Seats
+                                left</button>
                         </div>
                     </div>
                     <!-- route -->
@@ -206,6 +207,7 @@
                         </div>
                         <div class="flex gap-1">
                             <img src="images/seat-green-filled.png" alt="">
+
                             <h3 class="text-green font-semibold text-lg">Selected</h3>
                         </div>
                     </div>
@@ -218,19 +220,19 @@
                         <div class="flex justify-between font-raleway mb-1 pb-6">
                             <div class="flex gap-6 items-center">
                                 <p>A</p>
-                                <button class="btn md:px-12">A1</button>
-                                <button class="btn md:px-12">A2</button>
+                                <button id="A1" onclick="select('A1')" class="btn md:px-12 A1">A1</button>
+                                <button id="A2" onclick="select('A2')" class="btn md:px-12">A2</button>
                             </div>
                             <div class="flex gap-6">
-                                <button class="btn md:px-12">A3</button>
-                                <button class="btn md:px-12">A4</button>
+                                <button id="A3" onclick="select('A3')" class="btn md:px-12">A3</button>
+                                <button id="A4" onclick="select('A4')" class="btn md:px-12">A4</button>
                             </div>
                         </div>
                         <!-- B -->
                         <div class="flex justify-between font-raleway mb-1 pb-6">
                             <div class="flex gap-6 items-center">
                                 <p>B</p>
-                                <button class="btn md:px-12">B1</button>
+                                <button id="B1" onclick="select('B1')" class="btn md:px-12">B1</button>
                                 <button class="btn md:px-12">B2</button>
                             </div>
                             <div class="flex gap-6">
@@ -350,25 +352,21 @@
                                 <!-- head -->
                                 <thead>
                                     <tr>
-                                        <th class="font-semibold text-xl">Seat <span
-                                                class="btn bg-green btn-xs text-white">2</span></th>
+                                        <th class="font-semibold text-xl">Seat <span id="seat-book"
+                                                class="btn bg-green btn-xs text-white">0</span></th>
                                         <th class="font-semibold text-xl">Class</th>
                                         <th class="font-semibold text-xl">Price</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="table-body" class="table-body">
                                     <!-- row 1 -->
-                                    <tr>
-                                        <td>C2</td>
-                                        <td>Economy</td>
-                                        <td>550</td>
-                                    </tr>
+                                    
                                 </tbody>
                                 <thead>
                                     <tr>
                                         <th class="font-semibold text-xl ">Total Price (Tk)</th>
 
-                                        <th class="font-semibold text-xl">BDT 1100</th>
+                                        <th class="font-semibold text-xl">BDT <span id="total-price">0</span></th>
                                     </tr>
                                 </thead>
                             </table>
@@ -385,10 +383,13 @@
                                     <thead>
                                         <tr>
                                             <th class="font-semibold text-xl">Grand Total </th>
-                                            <th class="font-semibold text-xl">BDT 1100</th>
+                                            <th class="font-semibold text-xl">BDT <span id="grand-total">0</span></th>
                                         </tr>
                                     </thead>
                                 </table>
+                                <div class="text-center mt-4">
+                                    <h2 id="anymore" class="text-red-600 text-2xl font-inter font-extrabold hidden">You Can't Buy Anymore</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -475,6 +476,9 @@
             </nav>
         </div>
     </footer>
+
+    <script src="script/function.js"></script>
+    <script src="script/logic.js"></script>
 </body>
 
 </html>
