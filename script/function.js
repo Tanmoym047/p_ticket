@@ -1,11 +1,11 @@
-const array = [];
+let array = [];
 function selectSeat(elementId) {
     const element = document.getElementById(elementId);
-    element.classList.add('bg-green', 'text-white');
+    element.classList.add('bg-green', 'text-white', 'selected');
 }
 function deselectSeat(elementId) {
     const element = document.getElementById(elementId);
-    element.classList.remove('bg-green', 'text-white');
+    element.classList.remove('bg-green', 'text-white', 'selected');
 }
 function availableIncrease() {
     const element = document.getElementById('available');
@@ -16,6 +16,10 @@ function availableDecrease() {
     const element = document.getElementById('available');
     element.innerText = (parseInt(element.innerText) - 1);
 }
+function seatBookZero() {
+    const element = document.getElementById('seat-book');
+    element.innerText = 0;
+}
 function seatBookIncrease() {
     const element = document.getElementById('seat-book');
     element.innerText = (parseInt(element.innerText) + 1);
@@ -23,6 +27,12 @@ function seatBookIncrease() {
 function seatBookDecrease() {
     const element = document.getElementById('seat-book');
     element.innerText = (parseInt(element.innerText) - 1);
+}
+function createTableZero() {
+    
+    const tableBody = document.getElementById('table-body')
+    tableBody.innerHTML = ``;
+    array = [];
 }
 function createTable(elementId) {
     const row = document.createElement('tr');
@@ -52,24 +62,25 @@ function deleteTable(elementId) {
 }
 
 function setTotalPrice(x) {
-    const element = document.getElementById('total-price');    
+    const element = document.getElementById('total-price');
     element.innerText = x * 550;
 }
 function setGrandPrice(x) {
-    const element = document.getElementById('grand-total'); 
-    console.log(element.innerText);   
+    const element = document.getElementById('grand-total');
+    console.log(element.innerText);
     element.innerText = x * 550;
 }
 function setGrandPriceWithCoupon(x, code) {
-    const element = document.getElementById('grand-total'); 
-    console.log(element.innerText);   
-    
-    if(code === 'NEW15'){
-        let y = (x * 550) - ((x * 550*15)/100);
+    const element = document.getElementById('grand-total');
+    console.log(element.innerText);
+
+    // coupon codes are NEW15 and Couple20
+    if (code === 'NEW15') {
+        let y = (x * 550) - ((x * 550 * 15) / 100);
         element.innerText = y;
     }
-    else if(code === 'Couple20'){
-        let y = (x * 550) - ((x * 550*20)/100);
+    else if (code === 'Couple20') {
+        let y = (x * 550) - ((x * 550 * 20) / 100);
         element.innerText = y;
-    }   
+    }
 }
