@@ -60,3 +60,16 @@ function setGrandPrice(x) {
     console.log(element.innerText);   
     element.innerText = x * 550;
 }
+function setGrandPriceWithCoupon(x, code) {
+    const element = document.getElementById('grand-total'); 
+    console.log(element.innerText);   
+    
+    if(code === 'NEW15'){
+        let y = (x * 550) - ((x * 550*15)/100);
+        element.innerText = y;
+    }
+    else if(code === 'Couple20'){
+        let y = (x * 550) - ((x * 550*20)/100);
+        element.innerText = y;
+    }   
+}

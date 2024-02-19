@@ -22,9 +22,21 @@ function select(elementId) {
             seatBookIncrease();
             createTable(elementId);
             count++;
-            setTotalPrice( count);
-            setGrandPrice( count);
-        }
+            setTotalPrice(count);
+            setGrandPrice(count);
+            document.getElementById('apply').addEventListener('click', function () {
+                const coupon = document.getElementById('coupon');
+                const apply = document.getElementById('apply');
+                const code = coupon.value;
+                coupon.setAttribute('hidden', true);
+                apply.setAttribute('hidden', true);
+                if(code === 'NEW15'){
+                    setGrandPriceWithCoupon(count, code);
+                }
+                
 
+            })
+        }
     }
+
 }
