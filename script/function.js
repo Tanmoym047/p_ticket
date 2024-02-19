@@ -72,15 +72,20 @@ function setGrandPrice(x) {
 }
 function setGrandPriceWithCoupon(x, code) {
     const element = document.getElementById('grand-total');
-    console.log(element.innerText);
-
-    // coupon codes are NEW15 and Couple20
+    let y;
+    let discount;
+    // coupon codes are NEW15 and Couple 20
     if (code === 'NEW15') {
-        let y = (x * 550) - ((x * 550 * 15) / 100);
+        discount = ((x * 550 * 15) / 100)
+        y = (x * 550) - discount;
         element.innerText = y;
     }
-    else if (code === 'Couple20') {
-        let y = (x * 550) - ((x * 550 * 20) / 100);
+    else if (code === 'Couple 20') {
+        discount = ((x * 550 * 20) / 100);
+        y = (x * 550) - discount;
         element.innerText = y;
     }
+    document.getElementById('discount').innerText = discount;
+    document.getElementById('discounted').classList.remove('hidden');
+    
 }
